@@ -1,4 +1,5 @@
-# Python cache
+
+# Python
 __pycache__/
 *.py[cod]
 *.pyo
@@ -14,5 +15,5 @@ Thumbs.db
 # Logs
 *.log
 
-# Notes
+# Temporary files
 *.tmp
