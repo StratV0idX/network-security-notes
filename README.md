@@ -1,9 +1,2 @@
-# Hi, I'm Shannel 👋
-🎓 BSc Student in Network Security & Computer Forensics
-
-💻 Skills:
-- Python, Linux, Networking
-- Cybersecurity & Digital Forensics
-
-🚀 Goals:
-Become a cybersecurity specialist and build tools to improve digital security
+### Linux Notes
+- `linux security notes.md` → Beginner-friendly Linux security guide covering permissions, network security, system monitoring, and best practices
