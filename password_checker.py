@@ -2,10 +2,9 @@
 # Original Author: Shannel Segwabe
 # Contributor: Roshan Jeffrin R
 # Changes: Added scoring system, improved validation, user feedback
-import re
-import os
+
+import re, os
 from tkinter import *
-from PIL import Image, ImageTk
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # path of this code
 logo_path = os.path.join(BASE_DIR, "assets", "icon.ico")  # path of icon file
@@ -23,7 +22,7 @@ def load_wordlist():
         common_passwords = set()
 
 
-def check_password_Strength(password):
+def check_password_strength(password):
     score = 0
     feedback = []
 
@@ -72,10 +71,10 @@ def analyze():
     password = e.get()
 
     if not password.strip():
-        result_label.config(text="Password cannot be empty", font=(10))
+        result_label.config(text="Password cannot be empty", font=("Arial", 12))
         return
 
-    score, feedback = check_password_Strength(password)
+    score, feedback = check_password_strength(password)
     strength = get_strength(score)
 
     if strength == "Strong":
@@ -92,23 +91,23 @@ def analyze():
         for f in feedback:
             output += f"- {f}\n"
 
-    result_label.config(text=output, font=(10), fg=color)
+    result_label.config(text=output, font=("Arial", 12), fg=color)
 
 
 # Initiating Frame
 frame = Tk()
-frame.title("password_checker")
+frame.title("Password Checker")
 frame.iconbitmap(logo_path)
 frame.geometry("350x330")
 
 load_wordlist()
 
-Label(frame, text="password checker", font=("Arial", 20)).pack()
-Label(frame, text="Password: ", font=(15)).pack()
+Label(frame, text="Password Checker", font=("Arial", 30)).pack()
+Label(frame, text="Password: ", font=("Arial", 12)).pack()
 e = Entry(frame, width=25)
 e.pack()
 Button(frame, text="ANALYSE", command=analyze).pack()
 
-result_label = Label(frame, text="", justify="center")
+result_label = Label(frame, text="", justify="left", wraplength=300)
 result_label.pack()
 frame.mainloop()
